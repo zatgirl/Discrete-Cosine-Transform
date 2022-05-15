@@ -1,0 +1,433 @@
+# depslib dependency file v1.0
+1604604005 source:d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1531759698 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1589222603 source:d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1651765911 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1426372440 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1437579942 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1426372440 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1589217858 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\vector2.h
+
+1651719478 source:d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Interface.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+
+1651685320 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\interface.h
+	"gl_canvas2d.h"
+
+1651692372 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1651719331 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\draw.h
+	"gl_canvas2d.h"
+
+1651717649 d:\documentos\didactic resources - prof. cesar tadeu pozzer\03 - computação gráfica - material\demos\trab_1_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
+1604604005 source:d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1531759698 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1589222603 source:d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1651765911 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1426372440 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1437579942 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1426372440 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1589217858 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\vector2.h
+
+1652238906 source:d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Interface.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+
+1651685320 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\interface.h
+	"gl_canvas2d.h"
+
+1652238736 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1652239015 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\draw.h
+	"gl_canvas2d.h"
+	"Histograma.h"
+
+1652236871 d:\documentos\github\visualizador-de-imagem\trab_1_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
+1651770153 source:c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1651770153 source:c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\vector2.h
+
+1652203162 source:c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Interface.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\interface.h
+	"gl_canvas2d.h"
+
+1651770153 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1652198069 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\draw.h
+	"gl_canvas2d.h"
+	"Histograma.h"
+
+1652194127 c:\users\maure\documents\github\visualizador-de-imagem\trab_1_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
+1652239768 source:c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1652239768 source:c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\vector2.h
+
+1652308932 source:c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Interface.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\interface.h
+	"gl_canvas2d.h"
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1652308401 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\draw.h
+	"gl_canvas2d.h"
+	"Histograma.h"
+
+1652239768 c:\users\vinic\desktop\cg\visualizador-de-imagem-main\trab_1_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
+1652239768 source:c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1652239768 source:c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\vector2.h
+
+1652310052 source:c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Interface.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\interface.h
+	"gl_canvas2d.h"
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1652308401 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\draw.h
+	"gl_canvas2d.h"
+	"Histograma.h"
+
+1652239768 c:\users\vinic\desktop\cg\fourier\trab_2_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
+1652239768 source:d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1652239768 source:d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\vector2.h
+
+1652592895 source:d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Interface.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+
+1652565580 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\interface.h
+	"gl_canvas2d.h"
+	"Botao.h"
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1652572656 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\draw.h
+	"gl_canvas2d.h"
+	"Histograma.h"
+
+1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
