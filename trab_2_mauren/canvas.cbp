@@ -51,6 +51,7 @@
 		<Unit filename="src/Interface.h" />
 		<Unit filename="src/Vector2.h" />
 		<Unit filename="src/bmp.cpp" />
+		<Unit filename="src/func.h" />
 		<Unit filename="src/gl_canvas2d.cpp" />
 		<Unit filename="src/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />
