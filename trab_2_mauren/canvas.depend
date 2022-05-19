@@ -475,7 +475,7 @@
 
 1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\vector2.h
 
-1652988918 source:c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\main.cpp
+1652996659 source:c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -508,6 +508,7 @@
 	<cmath>
 	<cstring>
 
-1652989066 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\func.h
+1652998155 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\func.h
 	"gl_canvas2d.h"
+	"math.h"
 

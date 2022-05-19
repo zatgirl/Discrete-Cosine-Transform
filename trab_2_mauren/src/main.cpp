@@ -82,6 +82,7 @@ void interface(){
                 if(botoes[i]->Colidiu(mouseX, mouseY)){
                     select = i+1;
                 }
+
             }
             if(roll->Colidiu(mouseX, mouseY)==true){
                 if (op != 3){
@@ -95,8 +96,7 @@ void interface(){
         switch(select){
             case 1: graphic[op].DCT(true,false);    break;
             case 2: graphic[op].DCT(false,true);    break;
-            case 3:                                 break;
-
+            case 5: graphic[op].quantChoice(true);        break;
         }
 
 
