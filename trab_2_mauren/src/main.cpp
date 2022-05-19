@@ -30,7 +30,6 @@
 
 #include "gl_canvas2d.h"
 
-#include "Interface.h"
 #include "Botao.h"
 #include "Bmp.h"
 #include "Draw.h"
@@ -39,27 +38,73 @@
 #include "func.h"
 #define M_PI           3.14159265358979323846  /* pi */
 
+Botao *rgb = NULL;
+Botao *gray = NULL;
+Botao *roll = NULL;
+Botao *dif = NULL;
+Botao *quant = NULL;
+Botao *scalMax = NULL;
+Botao *scalMin = NULL;
 
-Interface interface;
 Histograma *histograma[3];
 Bmp *bmp[3];
 Img img[3];
 Graph graphic[3];
 
-//variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
-int screenWidth = 1176, screenHeight = 600; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
-int mouseX, mouseY; //variaveis globais do mouse para poder exibir dentro da render().
+int screenWidth = 1176, screenHeight = 600;
+int mouseX, mouseY;
 bool click = false;
-int op = 0;
+int op = 0, select =2;
 int DEFAULT_START_IMG_X = (screenWidth/6)*3, DEFAULT_START_IMG_Y = 20, altura[3], largura[3];
+
+
+
+void interface(){
+    //Painel de fundo
+        CV::color(0.8705,0.8705,0.8705);
+        CV::rectFill(0,0,screenWidth,screenHeight);
+    //Criação dos botões
+        rgb = new Botao(1*(screenWidth/6)-100,7*(screenHeight/8),120,45,"RGB",1,1,0.45);
+        rgb->Draw();
+        gray = new Botao(2*(screenWidth/6)-100,7*(screenHeight/8),120,45,"GRAY",0.5,0.5,0.5);
+        gray->Draw();
+        roll = new Botao(3*(screenWidth/6)-100,7*(screenHeight/8),120,45,"TROCAR",0.6,0.6,1);
+        roll->Draw();
+        dif = new Botao(4*(screenWidth/6)-100,7*(screenHeight/8),120,45,"DIFF",0.6,0.6,1);
+        dif->Draw();
+        quant = new Botao(5*(screenWidth/6)-100,7*(screenHeight/8),120,45,"QUANT",0.6,0.6,1);
+        quant->Draw();
+    //Testa se algum botão foi acionado
+        Botao *botoes[] = {rgb,gray,roll,dif,quant};
+        if(click == true){
+            for(int i = 0; i<5; i++){
+                if(botoes[i]->Colidiu(mouseX, mouseY)){
+                    select = i+1;
+                }
+            }
+            if(roll->Colidiu(mouseX, mouseY)==true){
+                if (op != 3){
+                    op ++; click = false;
+                }
+                if (op == 3){
+                    op = 0; click = false;
+                }
+            }click = false;
+        }
+        switch(select){
+            case 1: graphic[op].DCT(true,false);    break;
+            case 2: graphic[op].DCT(false,true);    break;
+            case 3:                                 break;
+
+        }
+
+
+}
 
 void render()
 {
-    interface = Interface(screenHeight,screenWidth);
-    interface.View();
-    graphic[0].TransfDiscretaCosseno();
-    //graphic[0].IDCT();
+    interface();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -98,7 +143,7 @@ int main(void)
    //Carregamento das Imagens
    unsigned char *data[3];
 
-   bmp[0] = new Bmp(".\\trab_2_mauren\\resources\\Ex1.bmp");
+   bmp[0] = new Bmp(".\\trab_2_mauren\\resources\\Lena32x32.bmp");
    bmp[1] = new Bmp(".\\trab_2_mauren\\resources\\Ex2.bmp");
    bmp[2] = new Bmp(".\\trab_2_mauren\\resources\\Ex3.bmp");
    for(int i = 0; i < 3; i++){

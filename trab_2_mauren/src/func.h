@@ -3,13 +3,16 @@
 
 #include "gl_canvas2d.h"
 #define M_PI           3.14159265358979323846  /* pi */
+#define N 8
+#define M 8
 
 class Graph{
-    int largura,altura;
+    int largura = 0,altura = 0;
     unsigned char *pixel;
-    float dct[256][256]; ///Guarda a matriz final
-    float idct[64][64]; ///Guarda a matriz final
-    float redd[256][256], greenn[256][256], bluee[256][256], grayy[64][64];
+    float dctGray[32][32], dctRed[32][32], dctGreen[32][32], dctBlue[32][32];
+    float idctGray[32][32], idctRed[32][32], idctGreen[32][32], idctBlue[32][32];
+    float red[32][32], green[32][32], blue[32][32], grayScale[32][32];
+    bool rgb = true, gray = false;
 
 public:
     Graph(){
@@ -31,111 +34,182 @@ public:
         for(int linha = 0; linha < largura; linha++){
             x = 70;
             for(int coluna = 0; coluna < altura; coluna++){
-                grayy[j][i] = ((0.3*((float)(pixel[idx]))) + (0.59*((float)(pixel[idx+1])))+ (0.11*((float)(pixel[idx+2]))));
-                CV::color(grayy[j][i]/255.0, grayy[j][i]/255.0,grayy[j][i]/255.0);
-                //grayy[j][i] = ((0.3*((float)(pixel[idx]))) + (0.59*((float)(pixel[idx+1])))+ (0.11*((float)(pixel[idx+2]))))-128;
-                redd[j][i] = ((float)pixel[idx]);
-                greenn[j][i] = ((float)pixel[idx+1]);
-                bluee[j][i] = ((float)pixel[idx+2]);
-                idx +=3;
-                CV::rectFill(coluna+x, linha+y, coluna+x+2, linha+y+2);
-                x+=0.5; i++;
-            }   y+=0.5; j++; i = 0;
-        } x = 20; idx = 0;  j = 0;
+                grayScale[j][i] = ((0.3*((float)(pixel[idx]))) + (0.59*((float)(pixel[idx+1])))+ (0.11*((float)(pixel[idx+2]))));
+                grayScale[j][i] = (grayScale[j][i] > 255) ? 255 : grayScale[j][i];
 
+                red[j][i] = ((float)pixel[idx]);
+                green[j][i] = ((float)pixel[idx+1]);
+                blue[j][i] = ((float)pixel[idx+2]);
+
+                if (gray == true){
+                    CV::color(grayScale[j][i]/255.0, grayScale[j][i]/255.0,grayScale[j][i]/255.0);
+                }
+                if (rgb == true){
+                    CV::color(red[j][i]/255.0,green[j][i]/255.0,blue[j][i]/255.0);
+                }
+                CV::rectFill(coluna+x, linha+y, coluna+x+6, linha+y+6);
+                idx +=3;
+                x +=5;
+                i ++;
+            }
+            y+=5;
+            j++;
+            i = 0;
+        }
+        x = 20;
+        idx = 0;
+        j = 0;
     }
 
-    void TransfDiscretaCosseno(){
+    void DCT(bool _rgb, bool _gray){
+        rgb = _rgb;
+        gray = _gray;
         SplitBands();
-        float minv=255,maxv=-255;
-        int N = 8, M = 8, blocot=0; ///Blocos de 8x8
-        float const_u, const_v, tempDCT;
+        float const_u, const_v, tempDCT_gray, tempDCT_red, tempDCT_green, tempDCT_blue;
 
         CV::color(0,0,0);
-        CV::text(370, 300, "Transformada");
+        CV::text(370, 300, "DCT");
 
         ///Separa a imagem em blocos de 8x8
-        for(int imgx = 0; imgx < 256; imgx +=8){
-            for(int imgy = 0; imgy < 256; imgy +=8){
-                //printf("bloco: %d, imgx %d, imgy %d\n",blocot,imgx, imgy);
-                ///Aplicação da transformada
-                for(int u = 0; u < M; u ++){
-                    for(int v = 0; v < N; v ++){
-                         ///const_u e const_v dependem da frequência
-                        const_u = (u == 0) ? 1 / sqrt(M) : sqrt(2) / sqrt(M);
-                        const_v = (v == 0) ? 1 / sqrt(N) : sqrt(2) / sqrt(N);
-                        tempDCT = 0;
-                        for(int x = 0; x < M; x ++){
-                            for(int y = 0; y < N; y ++){
-                                tempDCT += grayy[imgx+x][imgy+y]*
-                                                  cos(((2 * x + 1) * M_PI * u) / 16.0) *
-                                                  cos(((2 * y + 1) * M_PI * v) / 16.0);
-                                                  //printf("grayy[%d][%d]: %.2f\n",imgx+x,imgy+y,grayy[imgx+x][imgy+y]);
-                            }                     //dct[u][v] = (const_u * const_v * (tempDCT/4.0))/10;
-                        }//printf("tempDCT: %.2f\n",tempDCT);
-                        dct[imgx+u][imgy+v] = (const_u * const_v *((tempDCT/4.0)+0.5)*127);
-                        //printf("tempDCT: %.2f | dct: %.2f\n",tempDCT, dct[u][v]/4.0);
-                            minv = (minv > dct[imgx+u][imgy+v]) ? dct[imgx+u][imgy+v] : minv;
-                            maxv = (maxv < dct[imgx+u][imgy+v]) ? dct[imgx+u][imgy+v] : maxv;
+        for(int imgx = 0; imgx < 32; imgx +=8)
+        {
+
+            for(int imgy = 0; imgy < 32; imgy +=8)
+            {
+
+                for (int u = 0; u < N; u ++)
+                {
+                    for (int v = 0; v < M; v ++)
+                    {
+                        tempDCT_gray = 0;
+                        tempDCT_red  = 0;
+                        tempDCT_green= 0;
+                        tempDCT_blue = 0;
+                        for (int x = 0; x < N; x ++)
+                            for (int y = 0; y < M; y ++)
+                            {
+                                if(gray == true) {
+                                    tempDCT_gray = tempDCT_gray + grayScale[imgx+x][imgy+y] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                }
+                                if(rgb == true) {
+                                    tempDCT_red = tempDCT_red + red[imgx+x][imgy+y] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                    tempDCT_green = tempDCT_green + green[imgx+x][imgy+y] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                    tempDCT_blue = tempDCT_blue + blue[imgx+x][imgy+y] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                }
+
+                            }
+                        const_u = (u == 0) ? 1 / sqrt(2) : 1;
+                        const_v = (v == 0) ? 1 / sqrt(2) : 1;
+                        if(gray == true) {
+                            dctGray[imgx+u][imgy+v]= (1/4.0) * const_u * const_v * tempDCT_gray;
+                        }
+                        if(rgb == true) {
+                            dctRed[imgx+u][imgy+v]  = (1/4.0) * const_u * const_v * tempDCT_red;
+                            dctGreen[imgx+u][imgy+v]= (1/4.0) * const_u * const_v * tempDCT_green;
+                            dctBlue[imgx+u][imgy+v] = (1/4.0) * const_u * const_v * tempDCT_blue;
+                        }
                     }
                 }
             }
         }
-        //printf("max: %.2f | min: %.2f \n",maxv,minv);
+
+        //Desenha a DCT gerada
         int iniciox, inicioy = 20;
-        for(int i = 0; i < 256; i ++){
+        for(int i = 0; i < 32; i ++){
             iniciox = 370;
-            for(int j = 0; j < 256; j ++){
-                //printf("dct[%d][%d]: %.2f\n",i,j,dct[i][j]/255.0);
-                CV::color(dct[i][j]/255.0, dct[i][j]/255.0, dct[i][j]/255.0);
-                CV::rectFill(iniciox+j,inicioy+i,iniciox+j+2,inicioy+i+2);
-                iniciox +=0.5;
-            } inicioy +=0.5;
+            for(int j = 0; j < 32; j ++){
+                if(gray == true) {
+                    CV::color(dctGray[i][j]/255.0, dctGray[i][j]/255.0, dctGray[i][j]/255.0);
+                }
+                if(rgb == true) {
+                    CV::color(dctRed[i][j]/255.0, dctGreen[i][j]/255.0, dctBlue[i][j]/255.0);
+                }
+                CV::rectFill(iniciox+j,inicioy+i,iniciox+j+6,inicioy+i+6);
+                iniciox +=5;
+            } inicioy +=5;
         }
+
+        IDCT();
     }
 
     void IDCT(){
-        int N = 64, M = 64, blocot=0; ///Blocos de 8x8
-        float const_u, const_v, tempIDCT;
-        ///Aplicação da transformada
-        for(int imgx = 0; imgx < 64; imgx +=8){
-            for(int imgy = 0; imgy < 64; imgy +=8){
+        float const_u, const_v, tempIDCT_gray, tempIDCT_red, tempIDCT_green, tempIDCT_blue;
+        CV::color(0,0,0);
+        CV::text(640, 300, "IDCT");
 
-                //printf("bloco: %d, imgx %d, imgy %d\n",blocot,imgx, imgy);
-                ///Aplicação da transformada
-                for(int u = 0; u < M; u ++){
-                    for(int v = 0; v < N; v ++){
-                         ///const_u e const_v dependem da frequência
-                        const_u = (u == 0) ? 1 / sqrt(M) : sqrt(2) / sqrt(M);
-                        const_v = (v == 0) ? 1 / sqrt(N) : sqrt(2) / sqrt(N);
-                        tempIDCT = 0;
-                        for(int x = 0; x < M; x ++){
-                            for(int y = 0; y < N; y ++){
-                                tempIDCT += dct[imgx+x][imgy+y]*
-                                                  cos(((2 * x + 1) * M_PI * u) / 16.0) *
-                                                  cos(((2 * y + 1) * M_PI * v) / 16.0);
+        for(int imgx = 0; imgx < 32; imgx +=8)
+        {
+            for(int imgy = 0; imgy < 32; imgy +=8)
+            {
+
+                for (int x = 0; x < N; x ++)
+                {
+                    for (int y = 0; y < M; y ++)
+                    {
+                        tempIDCT_gray   = 0;
+                        tempIDCT_red    = 0;
+                        tempIDCT_green  = 0;
+                        tempIDCT_blue= 0;
+                        for (int u = 0; u < N; u ++)
+                            for (int v = 0; v < M; v ++)
+                            {
+                                const_u = (u == 0) ? 1 / sqrt(2) : 1;
+                                const_v = (v == 0) ? 1 / sqrt(2) : 1;
+
+                                if(gray == true) {
+                                    tempIDCT_gray = tempIDCT_gray + const_u * const_v * dctGray[imgx+u][imgy+v] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                }
+                                if(rgb == true) {
+                                    tempIDCT_red = tempIDCT_red + const_u * const_v * dctRed[imgx+u][imgy+v] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                    tempIDCT_green = tempIDCT_green + const_u * const_v * dctGreen[imgx+u][imgy+v] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                    tempIDCT_blue = tempIDCT_blue + const_u * const_v * dctBlue[imgx+u][imgy+v] *
+                                    cos(((2.0*x+1)*u*PI)/(2.0*(float)N))*
+                                    cos(((2.0*y+1)*v*PI)/(2.0*(float)M));
+                                }
+
                             }
+                        if(gray == true){
+                            idctGray[imgx+x][imgy+y]= (1/4.0) * tempIDCT_gray;
                         }
-                        idct[imgx+u][imgy+v] = ( const_u * const_v *(tempIDCT/4.0));
+                        if(rgb == true){
+                            idctRed[imgx+x][imgy+y]= (1/4.0) * tempIDCT_red;
+                            idctGreen[imgx+x][imgy+y]= (1/4.0) * tempIDCT_green;
+                            idctBlue[imgx+x][imgy+y]= (1/4.0) * tempIDCT_blue;
+                        }
+
                     }
                 }
-
             }
         }
+
         int iniciox, inicioy = 20;
-        for(int i = 0; i < 64; i ++){
-            iniciox = 370;
-            for(int j = 0; j < 64; j ++){
-                //printf("dct[%d][%d]: %.2f\n",i,j,dct[i][j]/255.0);
-                CV::color(idct[i][j]/255.0, idct[i][j]/255.0, idct[i][j]/255.0);
-                CV::rectFill(iniciox+j,inicioy+i,iniciox+j+2,inicioy+i+2);
-                iniciox ++;
-            } inicioy ++;
+        for(int i = 0; i < 32; i ++){
+            iniciox = 640;
+            for(int j = 0; j < 32; j ++){
+                if(gray == true) {
+                    CV::color(idctGray[i][j]/255.0, idctGray[i][j]/255.0, idctGray[i][j]/255.0);
+                }
+                if(rgb == true) {
+                    CV::color(idctRed[i][j]/255.0, idctGreen[i][j]/255.0, idctBlue[i][j]/255.0);
+                }
+                CV::rectFill(iniciox+j,inicioy+i,iniciox+j+6,inicioy+i+6 );
+                iniciox +=5;
+            } inicioy +=5;
         }
-
-
-
-
 
     }
 

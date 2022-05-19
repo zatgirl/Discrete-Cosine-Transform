@@ -435,3 +435,79 @@
 1652847710 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\func.h
 	"gl_canvas2d.h"
 
+1652895039 source:c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+
+1652895039 source:c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\include\gl\glut.h
+	"freeglut_std.h"
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\vector2.h
+
+1652988918 source:c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Botao.h"
+	"Bmp.h"
+	"Draw.h"
+	"Histograma.h"
+	"Vector2.h"
+	"func.h"
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\interface.h
+	"gl_canvas2d.h"
+	"Botao.h"
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\botao.h
+	"gl_canvas2d.h"
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\draw.h
+	"gl_canvas2d.h"
+	"Histograma.h"
+
+1652895039 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\histograma.h
+	"gl_canvas2d.h"
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<cstring>
+
+1652989066 c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\func.h
+	"gl_canvas2d.h"
+

@@ -48,7 +48,6 @@
 		<Unit filename="src/Botao.h" />
 		<Unit filename="src/Draw.h" />
 		<Unit filename="src/Histograma.h" />
-		<Unit filename="src/Interface.h" />
 		<Unit filename="src/Vector2.h" />
 		<Unit filename="src/bmp.cpp" />
 		<Unit filename="src/func.h" />
