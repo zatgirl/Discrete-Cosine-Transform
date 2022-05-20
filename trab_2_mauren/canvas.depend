@@ -398,17 +398,15 @@
 
 1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\vector2.h
 
-1652847461 source:d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\main.cpp
+1653013082 source:d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	"gl_canvas2d.h"
-	"Interface.h"
 	"Botao.h"
 	"Bmp.h"
-	"Draw.h"
 	"Histograma.h"
 	"Vector2.h"
 	"func.h"
@@ -424,7 +422,7 @@
 	"gl_canvas2d.h"
 	"Histograma.h"
 
-1652239768 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\histograma.h
+1653013920 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\histograma.h
 	"gl_canvas2d.h"
 	<iostream>
 	<cstdlib>
@@ -432,8 +430,9 @@
 	<cmath>
 	<cstring>
 
-1652847710 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\func.h
+1653013857 d:\documentos\github\discrete-cosine-transform\trab_2_mauren\src\func.h
 	"gl_canvas2d.h"
+	"math.h"
 
 1652895039 source:c:\users\maure\documents\github\discrete-cosine-transform\trab_2_mauren\src\bmp.cpp
 	"Bmp.h"
